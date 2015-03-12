@@ -67,8 +67,8 @@ public class PathGoogleMapsActivity extends FragmentActivity {
         String sensor = "sensor=false";
         String params = waypoints + "&" + sensor +"&" + origin + "&"+ destination;
         String output = "json";
-        String url = "https://maps.googleapis.com/maps/api/directions/" + output + "?" + params;
-        return url;
+       return  "https://maps.googleapis.com/maps/api/directions/" + output + "?" + params;
+        //return url;
     }
 
     private void addMarkers() {
@@ -125,7 +125,7 @@ public class PathGoogleMapsActivity extends FragmentActivity {
         @Override
         protected void onPostExecute(List<List<HashMap<String, String>>> routes) {
             ArrayList<LatLng> points ;
-            PolylineOptions polyLineOptions ;
+            PolylineOptions polyLineOptions = null ;
 
 
             try {
